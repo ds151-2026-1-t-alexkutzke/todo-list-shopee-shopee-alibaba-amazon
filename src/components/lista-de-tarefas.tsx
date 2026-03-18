@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { View } from "react-native";
+import { FlatList, View } from "react-native";
 
 interface Tarefa {
   texto: string;
@@ -18,7 +18,13 @@ const ListaDeTarefas = () => {
 
   return (
     <View>
-
+      <FlatList
+        data={tarefas}
+        keyExtractor={item => item.texto}
+        renderItem={({ item }) =>
+          <View>texto</View>
+        }
+      />
     </View>
   )
 }
