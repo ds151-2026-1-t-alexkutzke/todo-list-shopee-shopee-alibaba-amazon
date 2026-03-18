@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { TextInput, View, Text, StyleSheet } from 'react-native';
 
-const TextScreen = () => {
+interface TextScreenProps {
+  onEnter: ()=> void
+}
+
+const TextScreen = ({onEnter}:TextScreenProps) => {
   const [text, setText] = useState('');
 
   return (
@@ -10,7 +14,7 @@ const TextScreen = () => {
         style={styles.textInput}
         placeholder="Digite aqui"
         onChangeText={setText}
-        onEndEditing={() => console.log('Edição concluída')} //on Enter
+        onEndEditing={() => onEnter()}
         autoCapitalize="none"
         autoCorrect={false}
         value={text}
