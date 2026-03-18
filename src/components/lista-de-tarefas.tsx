@@ -25,7 +25,7 @@ export const ListaDeTarefas = ({ novaTarefa, setTarefas, tarefas }: ListaDeTaref
         data={tarefas}
         keyExtractor={item => item.id}
         renderItem={({ item }) =>
-          <View><Text>texto</Text></View>
+          <View><Text>{item.texto}</Text></View>
         }
       />
     </View>

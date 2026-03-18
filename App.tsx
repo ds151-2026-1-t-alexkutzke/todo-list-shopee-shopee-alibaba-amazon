@@ -9,9 +9,9 @@ export default function App() {
 
   const [tarefas, setTarefas] = useState<Tarefa[]>([])
 
-  const addTarefa = () => {
+  const addTarefa = (texto: string) => {
     const novaTarefa: Tarefa = {
-      texto: "i",
+      texto: texto,
       id: Date.now().toString() + Math.random().toString(), // Geração de ID único
     };
     setTarefas(oldTarefas => [...oldTarefas, novaTarefa]);
@@ -20,7 +20,7 @@ export default function App() {
   const [text, setText] = useState('');
 
   const onEnter = () => {
-    addTarefa();
+    addTarefa(text);
   }
 
   return (
