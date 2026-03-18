@@ -1,28 +1,31 @@
 import { useState } from "react"
-import { FlatList, View } from "react-native";
+import { FlatList, Text, View } from "react-native";
 
-interface Tarefa {
+export interface Tarefa {
   texto: string;
+  id: string;
 }
 
-export const ListaDeTarefas = () => {
+interface ListaDeTarefasProps {
+  novaTarefa: string;
+  setTarefas: (tarefas: Tarefa[]) => any;
+  tarefas: Tarefa[];
+}
 
-  const [tarefas, setTarefas] = useState<Tarefa[]>([])
 
-  const addTarefa = () => {
-    const novaTarefa: Tarefa = {
-      texto: "i"
-    };
-    setTarefas(oldTarefas => [...oldTarefas, novaTarefa]);
-  }
+
+
+export const ListaDeTarefas = ({ novaTarefa, setTarefas, tarefas }: ListaDeTarefasProps) => {
+
+
 
   return (
     <View>
       <FlatList
         data={tarefas}
-        keyExtractor={item => item.texto}
+        keyExtractor={item => item.id}
         renderItem={({ item }) =>
-          <View>texto</View>
+          <View><Text>texto</Text></View>
         }
       />
     </View>
