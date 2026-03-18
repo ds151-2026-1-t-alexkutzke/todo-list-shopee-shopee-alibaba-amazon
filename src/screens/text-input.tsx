@@ -2,11 +2,12 @@ import { useState } from 'react';
 import { TextInput, View, Text, StyleSheet } from 'react-native';
 
 interface TextScreenProps {
-  onEnter: ()=> void
+  onEnter: () => void,
+  text: string,
+  setText: (text: string) => any,
 }
 
-const TextScreen = ({onEnter}:TextScreenProps) => {
-  const [text, setText] = useState('');
+const TextScreen = ({ onEnter, text, setText }: TextScreenProps) => {
 
   return (
     <View style={styles.container}>

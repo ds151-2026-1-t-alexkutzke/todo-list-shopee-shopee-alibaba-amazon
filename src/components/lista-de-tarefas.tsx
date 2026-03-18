@@ -5,7 +5,7 @@ interface Tarefa {
   texto: string;
 }
 
-const ListaDeTarefas = () => {
+export const ListaDeTarefas = () => {
 
   const [tarefas, setTarefas] = useState<Tarefa[]>([])
 
